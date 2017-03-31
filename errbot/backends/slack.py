@@ -693,6 +693,8 @@ class SlackBackend(ErrBot):
         if card.fields:
             attachment['fields'] = [{'title': key, 'value': value, 'short': True} for key, value in card.fields]
 
+        attachment['mrkdwn_in'] = ['text']
+
         data = {
             'text': ' ',
             'channel': to_channel_id,
